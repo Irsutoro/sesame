@@ -26,7 +26,7 @@ class Password(BaseModel):
     label = pw.CharField(max_length=40) #user-defined identifier of site
 
 class Login_history(BaseModel):
-    user = pw.ForeignKeyField(model=User, backref='passwords')
+    user = pw.ForeignKeyField(model=User, backref='login_history')
     ip = pw.CharField(max_length=15)
     date = pw.DateTimeField()
     success = pw.BooleanField()
