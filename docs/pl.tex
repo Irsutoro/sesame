@@ -8,7 +8,7 @@
 \usepackage{float}
 \usepackage{relsize}
 
-\newcommand{\insertprojectname}{\textit{Sesame}}
+\newcommand{\insertprojectname}{\textit{Sesame }}
 \title{
     Ochrona Danych
     \\
@@ -40,4 +40,35 @@
     \listoftables
 
     \newpage
+
+    \section{Charakterystyka ogólna projektu}
+    Aplikacja \insertprojectname jest menadżerem haseł, ułatwiającym zarządzanie unikalnymi i bezpiecznymi hasłami w różnych serwisach. Umożliwia ona bezpieczne przechowywanie haseł na serwerze oraz zezwala na dostęp do nich tylko dla użytkownika, który zna hasło do serwisu. Użytkownik ma możliwość wprowadzanie wpisu do bazy danych, który zawiera zaszyfrowane hasło do danego serwisu oraz etykietę, która ułatwia użytkownikowi zidentyfikowanie do jakiego celu przechowywane jest hasło we wpisie. Szyfrowanie oraz odszyfrowanie dzieje się po stronie klienta, dzięki czemu niemożliwa jest ingerencja osób mających dostęp do serwera. Operacje te są zautomatyzowane, dzięki czemu użytkownik nie musi posiadać wiedzy dotyczącej kryptografii.
+
+    \section{Architektura systemu}
+    System oparty jest na modelu klient-serwer. Aplikacje klienckie udostępniają interfejs graficzny, umożliwiający korzystanie z serwisu osobom nietechnicznym. Na maszynie serwerowej uruchomiona jest relacyjna baza danych oraz program udostępniający API aplikacjom klienckim. API serwerowe pozwala wykonywać użytkownikom udostępnione operacje na bazie danych. W oparciu o API serwerowe, stworzone zostały API klienckie w poszczególnych językach programowaniach, które są dedykowane konkretnym platformom i które udostępniają funkcjonalności, ułatwiające implementacje aplikacji klienckich.
+
+    \subsection{Baza danych}
+    Tutaj będą schematy bazy danych oraz opis tychże.
+
+    \subsection{Serwisy}
+    Tutaj będą opisane udostępnione serwisy.
+
+    \section{Wymagania}
+    W rozdziale zostały opisane wymagania funkcjonalne oraz niefunkcjonalne serwera, aplikacji klienckich oraz komunikacji między nimi wraz z podziałem na aktorów.
+
+    \subsection{Wymagania funkcjonalne}
+    Tu będą wymagania funkcjonalne.
+
+    \subsection{Wymagania niefunkcjonalne}
+    A tutaj niefunkcjonalne.
+
+    \section{Narzędzia, środowiska, biblioteki}
+    Używane narzędzia.
+
+    \section{Diagramy UML}
+    Diagramy ułatwiające spójną implementację aplikacji.
+
+    \section{Możliwości rozwoju}
+    Plany na przyszłość.
+
 \end{document}
