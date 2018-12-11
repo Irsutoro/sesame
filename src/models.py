@@ -22,5 +22,11 @@ class User(BaseModel):
 
 class Password(BaseModel):
     user = pw.ForeignKeyField(model=User, backref='passwords')
-    block = pw.CharField(max_length=128) #part of password in base64 (max 96 character password)
+    block = pw.CharField(max_length=128) #password in base64 (max 96 character password)
     label = pw.CharField(max_length=40) #user-defined identifier of site
+
+class Login_history(BaseModel):
+    user = pw.ForeignKeyField(model=User, backref='passwords')
+    ip = pw.CharField(max_length=15)
+    date = pw.DateTimeField()
+    success = pw.BooleanField()
