@@ -75,12 +75,12 @@
 
     \paragraph{}Po każdej interakcji aplikacji klienckiej z serwerem, zostaje dodany wpis do logów, który zawiera informacje o użytkowniku, adresie IP, akcji, która została wykonana oraz o powodzeniu akcji. Dzięki temu zapewniona jest niezaprzeczalność i rozliczalność, co pozwala na śledzenie podejrzanych aktywności oraz przeciwdziałanie im.
 
-    \paragraph{}Hasła zapisane przez użytkownika, przechowywane na serwerze są w postaci zaszyfrowanej. Użytkownik może wybrać czy do odszyfrowania hasła chce używać zmodyfikowanego przez aplikację kliencką hasła do serwisu czy użyć osobnego klucza, podanego przez użytkownika. Całość szyfrowania i deszyfrowania odbywa się w aplikacji klienckiej, dzięki czemu klucz nigdy nie wydostaje się poza urządzenie użytkownika.
+    \paragraph{}Hasła zapisane przez użytkownika, przechowywane na serwerze są w postaci zaszyfrowanej symetrycznie. Użytkownik może wybrać czy do odszyfrowania hasła chce używać zmodyfikowanego przez aplikację kliencką hasła do serwisu czy użyć osobnego klucza, podanego przez użytkownika. Całość szyfrowania i deszyfrowania odbywa się w aplikacji klienckiej, dzięki czemu klucz nigdy nie wydostaje się poza urządzenie użytkownika.
 
-    \paragraph{}Do generowania soli oraz sekretów po stronie serwera używane są algorytmy zapewniające kryptograficznie losową sól (np. urandom w przypadku systemów opartych o UNIX).
+    \paragraph{}Do generowania soli oraz sekretów po stronie serwera używane są algorytmy wykorzystujące kryptograficznie bezpieczne źródło losowości (np. \texttt{/dev/urandom} w przypadku systemów opartych o UNIX lub \texttt{CryptGenRandom} w przypadku systemów Windows).
 
 
-    %jwt - DONE, hashe - DONE, https - DONE, zautoryzowane urządzenia - DONE, logi - DONE, enkrypcja haseł - DONE, generowane tokeny(z sekretem), urandom
+    %jwt - DONE, hashe - DONE, https - DONE, zautoryzowane urządzenia - DONE, logi - DONE, enkrypcja haseł - DONE, generowane tokeny(z sekretem), /dev/urandom
 
 
 
@@ -92,6 +92,7 @@
 
     \subsection{Wymagania niefunkcjonalne}
     A tutaj niefunkcjonalne.
+    % Kryptograficznie bezpieczne źródło losowości dla aplikacji serwerowej.
 
     \section{Narzędzia, środowiska, biblioteki}
     Używane narzędzia.
