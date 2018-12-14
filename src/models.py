@@ -6,14 +6,6 @@ class BaseModel(pw.Model):
     class Meta:
         database = pw.Proxy()
 
-    @classmethod
-    def connect(cls, database: pw.Database):
-        cls._meta.database.initialize(database)
-
-    @classmethod
-    def models(cls) -> List[pw.Model]:
-        return cls.__subclasses__()
-
 class User(BaseModel):
     username = pw.FixedCharField(max_length=88, unique=True) #base64 of sha512
     password = pw.FixedCharField(max_length=88) #base64 of pbkdf2(sha512)
