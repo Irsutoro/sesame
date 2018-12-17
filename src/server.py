@@ -1,4 +1,7 @@
 import peewee as pw
+import hashlib
+import os
+from base64 import b64decode, b64encode
 
 class Server:
 
@@ -15,3 +18,23 @@ class Server:
 
     def _initialize_proxy(self):
         self.base_model._meta.database.initialize(self.database)
+
+    @staticmethod
+    def _generate_salt(length=32):
+        salt = os.urandom(length)
+        return salt
+
+    @staticmethod
+    def _hash_password(password, salt, iterations, algorithm='sha512'):
+        hashed_password = hashlib.pbkdf2_hmac(algorithm, password.encode(), salt, iterations)
+        return hashed_password
+
+    @staticmethod
+    def _bytes_to_base(bytes):
+        base = b64encode(bytes).decode()
+        return base
+
+    @staticmethod
+    def _base_to_bytes(base):
+        bytes = b64decode(base)
+        return bytes
