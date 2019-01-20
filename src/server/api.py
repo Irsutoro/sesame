@@ -24,6 +24,7 @@ def get_user_login():
 class AuthService:
 #TODO aktywacja konta
 
+    """ #TODO przeniesienie do JWT service
     @cherrypy.tools.json_in()
     @cherrypy.tools.json_out()
     def GET(self):
@@ -37,7 +38,7 @@ class AuthService:
             #TODO zwrot JWT
             return 'Authorized'
         else:
-            raise cherrypy.HTTPError(401)
+            raise cherrypy.HTTPError(401) """
 
     @cherrypy.tools.json_in()
     def POST(self):
