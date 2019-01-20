@@ -48,7 +48,7 @@ class Client:
 
     def add_password(self, password, label, account_name):
         aes = pyaes.AESModeOfOperationCTR(hashlib.sha256(self.password.encode()).digest())
-        cipher = b64encode(aes.encrypt(password))
+        cipher = b64encode(aes.encrypt(password)).decode()
         response = requests.post(self.password_service, auth=self.auth_info, json={'password': cipher, 'label': label, 'account_name': account_name})
         if not response.ok:
             raise ValueError()
