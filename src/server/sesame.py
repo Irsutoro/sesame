@@ -5,7 +5,7 @@ import peewee as pw
 PBKDF2_ITERATIONS = 100000
 PBKDF2_ALGORITHM = 'sha512'
 SALT_LENGTH = 32
-
+#TODO sprawdzanie duplikatów haseł i ograniczeń w bazie
 class Sesame(Server):
     def __init__(self, database: pw.Database):
         super().__init__(database, BaseModel)
@@ -56,12 +56,15 @@ class Sesame(Server):
 
     def get_password(self, username: str, label: str):
         user = User.get(User.username == username)
-        passw = Password.get(user=user, label=label)
-        return passw.value, passw.algorithm.name
+        passw = Password.get_or_none(user=user, label=label)
+        if passw:
+            return passw.value, passw.username
+        else:
+            return None
 
     def get_password_labels(self, username: str):
         user = User.get(User.username == username)
         passw = Password.select().where(Password.user==user).dicts()
-        result = [row['value'] for row in passw]
+        result = [row['label'] for row in passw]
         return result
 
