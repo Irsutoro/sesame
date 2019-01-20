@@ -87,6 +87,7 @@ if __name__ == '__main__':
     cherrypy.config.update(CHERRYPY_CONFIG)
     cherrypy.tree.mount(UserService(), '/api/user', WITH_AUTHENTICATION)
     cherrypy.tree.mount(AuthService(), '/api/auth', WITHOUT_AUTHENTICATION)
+    cherrypy.tree.mount(PasswordService(), '/api/password', WITH_AUTHENTICATION)
 
     cherrypy.engine.start()
     cherrypy.engine.block()
