@@ -134,12 +134,23 @@
     % Kryptograficznie bezpieczne źródło losowości dla aplikacji serwerowej.
 
     \section{Narzędzia, środowiska, biblioteki}
-    Używane narzędzia.
+    \paragraph{}Serwer działa w oparciu o system operacyjny Ubuntu Server 18.04 LTS.
+	Do zarządzania danymi wykorzystywana jest relacyjna baza danych PostgreSQL 10
+	Mikroserwisy działające jako aplikacja serwerowa napisane są w języku Python 3.7 wraz z frameworkiem webowym CherryPy oraz biblioteką udostępniającą funkcjonalności ORM i łączności z bazą danych Peewee.
+	\paragraph*{} Pierwsza aplikacja kliencka to aplikacja desktopowa napisana w języku Python 3.7, testowana na systemach operacyjnych Windows 10, Ubuntu oraz MacOS. Biblioteką wykorzystaną w projekcie, która udostępnia funkcje ułatwiające tworzenie interfejsów użytkownika jest Tkinter.
+	\paragraph*{} Dodatkowe narzędzia wykorzystane przy tworzeniu aplikacji to Visual Studio Code, DBeaver Community Edition 5 oraz Postman.
+	\paragraph*{} Narzędzia, które zostały wykorzystane do wspierania pracy zespołowej to Discord do komunikacji głosowej podczas pracy, system kontoli wersji Git wraz z repozytorium na stronie GitHub.com, TexStudio (z użyciem MiKTeX) do tworzenia dokumentacji oraz Visual Paradigm do tworzenia schematów oraz diagramów.
 
     \section{Diagramy UML}
     Diagramy ułatwiające spójną implementację aplikacji.
 
     \section{Możliwości rozwoju}
-    Plany na przyszłość.
+    W ty rozdziale omówione zostały możliwe kierunki rozwoju aplikacji.
+
+    \begin{itemize}
+		\item Wprowadzenie opcjonalnej autoryzacji dwuetapowej, umożliwiającym użytkownikom zwiększenie bezpieczeństwa przechowywanych w serwisie haseł. System ten mógłby zostać zaimplemenetowany w formie aplikacji mobilnej dostępnej w systemach Android i iOS, które po uwczesnym zalogowaniu i oznaczeniu urządzenia jako zaufanego mogłyby generować kilkucyfrowe kody autoryzacyjne.
+		\item Udostępnienie większej ilości oficjalnych aplikacji klienckich, które mogłyby być dostępne jako aplikacje mobilne na systemy Android i iOS, rozszerzenie w przeglądarkach czy aplikacja przeglądarkowa.
+		\item Ustalenie jednolitej szaty graficznej aplikacji klienckich i elementów ułatwiających rozpoznanie systemu takich jak logo czy kolorystyka.
+	\end{itemize}
 
 \end{document}
